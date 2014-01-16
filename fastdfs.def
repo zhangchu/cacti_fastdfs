@@ -1,0 +1,817 @@
+# This is the template definition file.  To use it, see pmp-cacti-template.
+#
+# This program is copyright (c) 2008 Baron Schwartz. Feedback and improvements
+# are welcome.
+#
+# THIS PROGRAM IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+# MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, version 2.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+# Place, Suite 330, Boston, MA  02111-1307  USA.
+
+# Autobuild: ss_get_by_ssh.php
+
+{
+   name   => 'FastDFS Server',
+   hash   => 'hash_02_VER_054a577de8986fe5b40cd863c3b805b0',
+   version => {
+      version => '1.1.1',
+      hash    => 'hash_06_VER_ff8533c198345b9e867b3143f510b02c',
+   },
+   checksum => 'hash_06_VER_9ee5e05b2ea26e4b56093ceaeb886e9d',
+   graphs => [
+      {  name       => 'FastDFS Status',
+         base_value => '1000',
+         hash       => 'hash_00_VER_26a2cddc7a57e896d2aa2a8ee0d04f9a',
+         dt         => {
+            hash       => 'hash_01_VER_4d91255620869b767c38d0e0e7ea57d5',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_status => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_dff917d72cb30b925f1c4352772a6ce0'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_status',
+               color  => '9B2B1B',
+               task   => 'hash_09_VER_81983ea1f5924ede2cca8d81d4dbe9f7',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_e762e25d2eef41d1519d40bf35185daa',
+                  'hash_10_VER_829faba6a42b7ff0a80117d6365ce4ce',
+                  'hash_10_VER_bda8f5834a77f4e3d31d3cd3f9011366',
+                  'hash_10_VER_c3ded53795c31844d5ee341a22a84917',
+                  'hash_10_VER_b5ffceddfae58f233535084c3784f219',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Storage',
+         base_value => '1024',
+         hash       => 'hash_00_VER_3709294e18cdfee5cc5994c70d381283',
+         dt         => {
+            hash       => 'hash_01_VER_1e23fa74acb86ad4587ed7edad87cf2e',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_storage => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_c684a87e40e7e959e80bbcfb5f77ec25'
+            },
+            FASTDFS_free_storage => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_feb32ee8c0d8f6f5762244b6a48e14f4'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_storage',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_ef0d2fbac33e6c2fa4f6b64f2e9139a3',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_e198fe50d0431c27814d29fe779296b3',
+                  'hash_10_VER_8dc94e8dca482a176eba34bd0515384c',
+               ],
+            },
+            {  item   => 'FASTDFS_free_storage',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_8c4606e016ec05603b764c67f61aaf2d',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_f66a6c4a253c652a95a39286100caf74',
+                  'hash_10_VER_2f6a0a9761f6545f2b9cca3a000e5aac',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Upload Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_edc8bce7c40bec940099764881bfeeb0',
+         dt         => {
+            hash       => 'hash_01_VER_c72993ba55aa7d90792c2dd4e6efc7d8',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_upload_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_c6cf957687c845a60342a98cb172c40f'
+            },
+            FASTDFS_success_upload_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_3cc208f18138b68b2562ce57b5b802d1'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_upload_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_4be4d9e157845a64cc7b4401ea7262a0',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_3fb3c0a0a7481958a33761238c29f885',
+                  'hash_10_VER_274762f44f8ec42da022aa6706ed28f2',
+               ],
+            },
+            {  item   => 'FASTDFS_success_upload_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_d6b148fd32f62f0cf7999627caef70cc',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_fec2dbc95691746c3aea7b0515ef055a',
+                  'hash_10_VER_be4ab89bbdef0fab131833d02ebd7f2a',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Upload Bytes',
+         base_value => '1024',
+         hash       => 'hash_00_VER_6011db34aa15566b886d08fcda5d314d',
+         dt         => {
+            hash       => 'hash_01_VER_b5176f3dc44785b4011ecfd2e39d04e0',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_upload_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_6bb5bbb15df1c7a1214869e0420cf501'
+            },
+            FASTDFS_success_upload_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_6630037e3ebf93db3d25ccfc8b0765c8'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_upload_bytes',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_4aff7dfb66d532cac75e2ef505266ced',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_344ab80f22829d71f197e9678f7d95ec',
+                  'hash_10_VER_025b99e2547604d5bac0a9050a495005',
+               ],
+            },
+            {  item   => 'FASTDFS_success_upload_bytes',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_d31b72701ea8576889ffac7715da100b',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_4d2f480c25a45a163e2bdadb3b153098',
+                  'hash_10_VER_c5e53627752dbaf7dc2d621861f63cca',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Append Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_75c2b5975688bcbf0495ef934633f742',
+         dt         => {
+            hash       => 'hash_01_VER_183acf174f3da3cc8c58399df8fe0b91',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_append_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_adbb51d2b571486d5b258a6d69aeae33'
+            },
+            FASTDFS_success_append_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_fa9c5e981da4478eb287f4a565ca40f0'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_append_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_487c0da9cdac5b63bde8bd8250833a34',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_6d980209951ae295766a433403ce7d1b',
+                  'hash_10_VER_90d5c606046e25a82b141631a4c18ff7',
+               ],
+            },
+            {  item   => 'FASTDFS_success_append_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_cc43174bc7af81f2fd14ac7fff0a115f',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_9c445fbead258a6a24a8e61486522680',
+                  'hash_10_VER_4b868426663f6be87f42c2d5e8ef6079',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Append Bytes',
+         base_value => '1024',
+         hash       => 'hash_00_VER_cea396873b667e84a1ef7bf6caf59c4e',
+         dt         => {
+            hash       => 'hash_01_VER_222ff3bbd1e04963995ee004da52506d',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_append_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_488db6b2100d61b39d1f7c63a512c1f8'
+            },
+            FASTDFS_success_append_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_890893d261b83da3f90d307cece74a84'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_append_bytes',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_6a7ae07f4f4aacd844395245770cce50',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_494747329774803923c4ab6186424ffb',
+                  'hash_10_VER_76db659006f81d7dab5d2f19c00063fc',
+               ],
+            },
+            {  item   => 'FASTDFS_success_append_bytes',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_7834cbd78d56457e3c3eef444c8e0e24',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_000a314f8aff7efa6894d59fc98687c3',
+                  'hash_10_VER_13bf3740b0ed9a94914c210665046d71',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Modify Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_4eb6b2a12bf65e3dd7c35cbed22fdafe',
+         dt         => {
+            hash       => 'hash_01_VER_3081997fd802992338b089af3673e44e',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_modify_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_a09bea6cee94829ae27acdb07d818770'
+            },
+            FASTDFS_success_modify_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_7f8d17d83e7b17ecf61328b708af4789'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_modify_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_c585f2574a11c2ce350476fe41beb1f2',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_0c2acabde02835a102031714cc43dc2d',
+                  'hash_10_VER_52bf6894098eefc652b51f894c1d834d',
+               ],
+            },
+            {  item   => 'FASTDFS_success_modify_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_77603bd6cf9dd06a99d2201c21a27e66',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_cf9e077ec98be1cbbea9c5c233554d1e',
+                  'hash_10_VER_37d8013ea05e20d4a5e74a16cf021cd7',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Modify Bytes',
+         base_value => '1024',
+         hash       => 'hash_00_VER_ec9234c7935c0aca9cf8c8a8f948e410',
+         dt         => {
+            hash       => 'hash_01_VER_ac73195166ab31d3130148b2af41db63',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_modify_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_93f1ce8e412c9abab0e17a91e2b1c347'
+            },
+            FASTDFS_success_modify_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_e2dd7cb770386c8d44aa2fd814c40b18'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_modify_bytes',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_2effdea42e9754f35e5e1e57441e716b',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_71f6e9d18f4a215fdd21abab9fdd7ccc',
+                  'hash_10_VER_e70eb6a3e3a9bfb40453b73caea1ad9e',
+               ],
+            },
+            {  item   => 'FASTDFS_success_modify_bytes',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_80e56d014618093b0d71727f35e5f773',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_eab4f62e8bc5db162e7acd9d3e08c18e',
+                  'hash_10_VER_e4fae3c233a2fb8c6d8c62683cf5c308',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Truncate Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_f82d6b15bf43269814ed45adf3e004b7',
+         dt         => {
+            hash       => 'hash_01_VER_002db52a4792f7772ecc3b872db2ede3',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_truncate_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_1c0506b98fe2675920f6662d3e4e665d'
+            },
+            FASTDFS_success_truncate_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_739cb5239d673ffcdfe67316f5d4ae1b'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_truncate_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_df9dd630963b60b4308ba1c7ff4f3c29',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_e069c65d2347146f17d93eafcf4cb79f',
+                  'hash_10_VER_602db105cb3b93b537bf2f338deb33e4',
+               ],
+            },
+            {  item   => 'FASTDFS_success_truncate_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_2fc962ed92f006b986c80bdc73a66e48',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_77d2661c1afe2c6c380d4e8a599f9128',
+                  'hash_10_VER_c63f3cc9f647783e1c0b4a7f7686ff8a',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Set Meta Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_8b829bf2fb80b3409272ba3fd3fa6f0b',
+         dt         => {
+            hash       => 'hash_01_VER_6a489c94f5f636a1c63326529fb18e1d',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_set_meta_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_5ff3902aec3de4bfb86429191d4b13de'
+            },
+            FASTDFS_success_set_meta_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_66ad6d3f25ece5b87ffcbc4a437c4090'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_set_meta_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_102d6a472711980761d520a915daddde',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_d88a128482e3b80abf4ffeff4ce260c4',
+                  'hash_10_VER_9b702f96ce49d956773d9dbde95c6f15',
+               ],
+            },
+            {  item   => 'FASTDFS_success_set_meta_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_5ad232295c4a6c2c5b60149672f2a6b6',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_9da7c23be751e044fcddde3685089a5e',
+                  'hash_10_VER_2e2f9ae02125ee59fa9f9a86046d4dc2',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Delete Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_a517a6da2def33c00ebe85b6fa2b7245',
+         dt         => {
+            hash       => 'hash_01_VER_244e95ce388c81b322750a36e57fb35d',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_delete_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_8e44e0d6392af1c29b839c1bf3484fad'
+            },
+            FASTDFS_success_delete_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_1f2a006ef007f300f09f15dba6f3c095'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_delete_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_dce30d574372bdc57d519cc7e515c41f',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_e8784362cd6619a42b1fd846f1ef8b20',
+                  'hash_10_VER_54448e727496398d9e1ea124acbbfb41',
+               ],
+            },
+            {  item   => 'FASTDFS_success_delete_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_f65377c2f62f837e8ab03ff09c149882',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_42861017d7725494ac6b07d5b5933f20',
+                  'hash_10_VER_c4565cade3a6b5d51d45a9e7be21f297',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Download Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_c21e49fa30a52a006364d357de1ee418',
+         dt         => {
+            hash       => 'hash_01_VER_a7e128380a26289cc6cb5f03af956fc5',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_download_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_37cbcbd7eae117af335cb2b68fd23030'
+            },
+            FASTDFS_success_download_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_5ca7f1f6823f7b52b1dc7ca59a3d692a'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_download_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_03f90ee1ac4eab45523e8bd711099759',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_ab9df9a0553b25fe0eb8f6455852bcfe',
+                  'hash_10_VER_8a0edbdd0603433fdd11117023491a29',
+               ],
+            },
+            {  item   => 'FASTDFS_success_download_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_4507b4348af709e1e222fa7c3f3e43e6',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_633922de67813d20dbfbd5c106c44536',
+                  'hash_10_VER_197a1042cec0e22d6b64adc2987ba4c3',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Download Bytes',
+         base_value => '1024',
+         hash       => 'hash_00_VER_e29f287d79bb5a1b4e058d1d78fb1443',
+         dt         => {
+            hash       => 'hash_01_VER_72de7d4c31c0911f8c0cd36d819d78f0',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_stotal_download_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_d095cd1da48d1e27a3f329d5d453cd5a'
+            },
+            FASTDFS_success_download_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_fe2a3febab1c66a4caf4360268b3caf0'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_stotal_download_bytes',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_9ef93d70d72dfdb9d73aefb56e4606da',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_572250d88f3b1e8085c4402ba9dd466b',
+                  'hash_10_VER_3cb19ccb50c1d6721e8e134c5d1f2aaf',
+               ],
+            },
+            {  item   => 'FASTDFS_success_download_bytes',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_5749ebed6ea2b0ce5d3c9f746ac99ded',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_9ba4acdd551468b8abec51f778984bd0',
+                  'hash_10_VER_5ada432e3ef968439bb07add6080170c',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Get Meta Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_a88ef3e8a4c1e9e4d636b6a64f9cd78c',
+         dt         => {
+            hash       => 'hash_01_VER_f044c55502b80efccd01e78f63c7c460',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_get_meta_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_5f50d72e48a6d9b4b5e3c27a069507a2'
+            },
+            FASTDFS_success_get_meta_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_2308fe323fdc38e8dceaf8cb7ffb47d5'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_get_meta_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_44cc52dcad74f188fafbb27f8110b504',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_2c96e441e20ff300d107419dec41500b',
+                  'hash_10_VER_9323490ff5e2ef4453ed5fd47fad1b94',
+               ],
+            },
+            {  item   => 'FASTDFS_success_get_meta_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_ed393e03ad4ae7374c9edd06be239328',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_7ae29e60ba2164b1a3e961926468c383',
+                  'hash_10_VER_10aa3c10561ff05d8c5ed6051e4492f7',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Create Link Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_4a987343e6c81a23335d3075eb6d997e',
+         dt         => {
+            hash       => 'hash_01_VER_ce3cb449ef3fdc03e2d1001856dc2eae',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_create_link_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_a58661a5ae57e40082a3be9003678fbb'
+            },
+            FASTDFS_success_create_link_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_55f89ce339fc75bf05c73b06f58924f4'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_create_link_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_ec4617e9b008717007946f52b5481489',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_0479148468260b5a3d6588d5c8b1e21f',
+                  'hash_10_VER_5c8df2bcc49872f9ae16efb78f27aa82',
+               ],
+            },
+            {  item   => 'FASTDFS_success_create_link_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_0b25aae4df64b2eca4ddde8c9d84f777',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_7026ca090446b934a578f31d88ebd8d4',
+                  'hash_10_VER_f798026def013cf02f709e0725a2075e',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Delete Link Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_4178dadf4101af3a255f715ca2440217',
+         dt         => {
+            hash       => 'hash_01_VER_1b234d435cf3f5cb55ddf71163c935bd',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_delete_link_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_a8dd6b3ee5096df1383b15aeb017462e'
+            },
+            FASTDFS_success_delete_link_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_fd478042402746799dad73eaee275003'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_delete_link_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_70038cdc8a32dcfe0cdd7554a0ed40ad',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_1f6a1fad36ecfbe092d3660e4efae68f',
+                  'hash_10_VER_2929b7b889797787e6f59535252f93b1',
+               ],
+            },
+            {  item   => 'FASTDFS_success_delete_link_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_ee3c88047efa399db81c80dd6adb8801',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_da518932c426b451881ac3a9c79bf01e',
+                  'hash_10_VER_f0c041eed8d602a492c74d413ac1065e',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS Sync In/Out Bytes',
+         base_value => '1024',
+         hash       => 'hash_00_VER_dda91aff732b37b26921a4c370578c29',
+         dt         => {
+            hash       => 'hash_01_VER_632b6d5484bb5da4139bc101ddce311b',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_sync_in_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_7bcc7496f2fac1ee8f8670ed0625ebae'
+            },
+            FASTDFS_success_sync_in_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_c5a2f7cc6a88c1256b905d79a665cc6a'
+            },
+            FASTDFS_total_sync_out_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_1071bb58b6f65977e3306f7df9780af6'
+            },
+            FASTDFS_success_sync_out_bytes => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_3656d15b332c19a3727498353f61d99b'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_sync_in_bytes',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_90817f733cec728d9ec8a9f85c24625f',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_0a6da9b2c4fa4d8eeb4a9ac600161ae3',
+                  'hash_10_VER_cd258c16d24bc77640899483ec98e748',
+               ],
+            },
+            {  item   => 'FASTDFS_success_sync_in_bytes',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_0332cae54e6040f624e33354f7d67f68',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_7c45cf121e8ddd82aa502189aceb31c7',
+                  'hash_10_VER_59d563a955348e9de070efccf5f1e7c6',
+               ],
+            },
+            {  item   => 'FASTDFS_total_sync_out_bytes',
+               color  => 'FF7D00',
+               task   => 'hash_09_VER_d24c1c7b452ba67e5ccf22b069c595f2',
+               type   => 'LINE1',
+			   cdef   => 'Negate',
+               hashes => [
+                  'hash_10_VER_350c25133429967df4604e33066ed8f5',
+                  'hash_10_VER_2bd6205487cc4a6cd8fe49a33104ce1a',
+               ],
+            },
+            {  item   => 'FASTDFS_success_sync_out_bytes',
+               color  => 'FFF200',
+               task   => 'hash_09_VER_655616c3ace944be0d7026280483e5e4',
+               type   => 'AREA',
+			   cdef   => 'Negate',
+               hashes => [
+                  'hash_10_VER_2dc2887efa6dcc0636e740bdef75df0f',
+                  'hash_10_VER_6ce2989755d976b4b6cca1ce50b47cf8',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS File Open Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_e35211c3adfd3e1c4a1294b99151f695',
+         dt         => {
+            hash       => 'hash_01_VER_0adca14041a85214203c31e2b00e970d',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_file_open_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_03e881a842fbef63514ad4298e604138'
+            },
+            FASTDFS_success_file_open_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_b16279f239bb49facb8e0cb79c489271'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_file_open_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_6be119510f98fba5aff5cb72a1ec8192',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_161b1e4558355aa4949f84a1ebc9172b',
+                  'hash_10_VER_a4118eba5303f3bfdf110a885c6f7c5c',
+               ],
+            },
+            {  item   => 'FASTDFS_success_file_open_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_cea70c201a64fdd78f2e22fbcf6c1c7d',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_5d5a037f687df09a50cccd2c1e28fa4a',
+                  'hash_10_VER_9f83c5d816bae42a09dc46d4aed4aafb',
+               ],
+            },
+         ],
+      },
+      {  name       => 'FastDFS File Read/Write Count',
+         base_value => '1000',
+         hash       => 'hash_00_VER_bfb18cf512b02a94422a8fedcb0daee7',
+         dt         => {
+            hash       => 'hash_01_VER_d2b201d493fa8e5a83f4e15aa4b3afd6',
+            input      => 'Get FastDFS Stats',
+            FASTDFS_total_file_read_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_697a2c98e17066766cc791b242b599ea'
+            },
+            FASTDFS_success_file_read_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_02f31d440c279a225ce3f099a1850e2c'
+            },
+            FASTDFS_total_file_write_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_55424993a065987cf451a8d1903c19e4'
+            },
+            FASTDFS_success_file_write_count => {
+               data_source_type_id => '1',
+               hash => 'hash_08_VER_6f4bab5bbad53c21e2aae4203e822d58'
+            },
+         },
+         items => [
+            {  item   => 'FASTDFS_total_file_read_count',
+               color  => 'FFC3C0',
+               task   => 'hash_09_VER_ddeac017c75ccf578f3fcc162005b858',
+               type   => 'LINE1',
+               hashes => [
+                  'hash_10_VER_2dbafb5604b9debbc055d2e5d25269a2',
+                  'hash_10_VER_ba283b8599a6f96f67c007bad2fa303c',
+               ],
+            },
+            {  item   => 'FASTDFS_success_file_read_count',
+               color  => 'FF0000',
+               task   => 'hash_09_VER_9fe22e0995f3395c1e8cadf446f2be5c',
+               type   => 'AREA',
+               hashes => [
+                  'hash_10_VER_ed85e261b055c9cc1f21d800db922912',
+                  'hash_10_VER_e1d3058b33bd2b9b94b029651e5322c0',
+               ],
+            },
+            {  item   => 'FASTDFS_total_file_write_count',
+               color  => 'FF7D00',
+               task   => 'hash_09_VER_f4dca45a3c6c758536c0eca5b2a44005',
+               type   => 'LINE1',
+			   cdef   => 'Negate',
+               hashes => [
+                  'hash_10_VER_2f4d99611b605b94f14fdb491fee1208',
+                  'hash_10_VER_0cd5f060db271c0747cb0e9c26f384f4',
+               ],
+            },
+            {  item   => 'FASTDFS_success_file_write_count',
+               color  => 'FFF200',
+               task   => 'hash_09_VER_8338aa79c86a7794fa233b81a3668edd',
+               type   => 'AREA',
+			   cdef   => 'Negate',
+               hashes => [
+                  'hash_10_VER_ec5d7456fa2deee6128a48d47bba61ba',
+                  'hash_10_VER_de8e45a2791305755af4c01475e951d5',
+               ],
+            },
+         ],
+      },
+   ],
+   inputs => {
+      'Get FastDFS Stats' => {
+         type_id      => 1,
+         hash         => 'hash_03_VER_da23795f23fdb1d4b0ffcadfee3318e1',
+         input_string => '<path_php_binary> -q <path_cacti>/scripts/ss_get_by_ssh.php '
+                       . '--host <hostname> --type fastdfs --items <items> ',
+         inputs => [
+            {  allow_nulls => '',
+               hash        => 'hash_07_VER_2b25424e3bbca402b87959e831abee2d',
+               name        => 'hostname'
+            },
+         ],
+         outputs => {
+            FASTDFS_status                    => 'hash_07_VER_e92d76e2c3d22e43372b13985b6ba06e',
+            FASTDFS_total_storage             => 'hash_07_VER_8a8a2f985ebf6c8bca699efb30aadb34',
+            FASTDFS_free_storage              => 'hash_07_VER_1eab13ddf985388a455f92e977ae3460',
+            FASTDFS_total_upload_count        => 'hash_07_VER_3b2725b339da280cccf9c51b24c119dd',
+            FASTDFS_success_upload_count      => 'hash_07_VER_95d278d55be2ddbf71be124bb10a3010',
+            FASTDFS_total_append_count        => 'hash_07_VER_58946c7ca31eb0ff10856ca828ec9943',
+            FASTDFS_success_append_count      => 'hash_07_VER_0b25ce242dab41d1d74af6c29c7b2cc8',
+            FASTDFS_total_modify_count        => 'hash_07_VER_73166acecbc2b4436acd4523d1e2b4fc',
+            FASTDFS_success_modify_count      => 'hash_07_VER_15cc4cf0e50f33581f5d4984d245641b',
+            FASTDFS_total_truncate_count      => 'hash_07_VER_b2664aa074dc2d8e34b412d322291d98',
+            FASTDFS_success_truncate_count    => 'hash_07_VER_23fab6ff85e03bac769356552f8928a4',
+            FASTDFS_total_set_meta_count      => 'hash_07_VER_cdf80d509f19ff9156cfbc0bdbff6d96',
+            FASTDFS_success_set_meta_count    => 'hash_07_VER_28362a6c5ea98f38653256704a82f06b',
+            FASTDFS_total_delete_count        => 'hash_07_VER_32975c8e6e36c04bf0878e00c96ee735',
+            FASTDFS_success_delete_count      => 'hash_07_VER_d65d4c78e2deeff4fa0b13417fd0fdd5',
+            FASTDFS_total_download_count      => 'hash_07_VER_1f98f696e40ba71d2d0fb46e464bdbe4',
+            FASTDFS_success_download_count    => 'hash_07_VER_36fecea24073a44e171f0b717b3c269d',
+            FASTDFS_total_get_meta_count      => 'hash_07_VER_8cd014ba4c9c198479e6276e02cfcfbb',
+            FASTDFS_success_get_meta_count    => 'hash_07_VER_569930bff7ccdf148962e02c5939105c',
+            FASTDFS_total_create_link_count   => 'hash_07_VER_a8f24c9b863bfbe49de57ffa4556e8a3',
+            FASTDFS_success_create_link_count => 'hash_07_VER_184f23e6e8c2a99d20ea57c675635d9e',
+            FASTDFS_total_delete_link_count   => 'hash_07_VER_ec244833fbf454fdaaece55a5a0b203d',
+            FASTDFS_success_delete_link_count => 'hash_07_VER_45498995c0f5f608c7470bcd6d1ea4c3',
+            FASTDFS_total_upload_bytes        => 'hash_07_VER_ed5c8dce6d42a372114689dda37a8571',
+            FASTDFS_success_upload_bytes      => 'hash_07_VER_2adb5c90cae01c88d4dac8e2eb2fc542',
+            FASTDFS_total_append_bytes        => 'hash_07_VER_2a143057f66c361385074e1d4ca57c2b',
+            FASTDFS_success_append_bytes      => 'hash_07_VER_7eb49b7020113bf78ccd58b96db7b403',
+            FASTDFS_total_modify_bytes        => 'hash_07_VER_712102fe34bcaf99b4f76b215245688f',
+            FASTDFS_success_modify_bytes      => 'hash_07_VER_bbd24ae12db1a97b94daef95860cfd95',
+            FASTDFS_stotal_download_bytes     => 'hash_07_VER_c3ab325e23f7730bbff8b6e2889ae04e',
+            FASTDFS_success_download_bytes    => 'hash_07_VER_78f4843a14e59132524d8d75840e29eb',
+            FASTDFS_total_sync_in_bytes       => 'hash_07_VER_ffad96d8de802cd66a48f676412adc31',
+            FASTDFS_success_sync_in_bytes     => 'hash_07_VER_0337d0e14598e572c4c464eb05302948',
+            FASTDFS_total_sync_out_bytes      => 'hash_07_VER_0d5d2b77dff0240dc92ffe9fa3a2fd22',
+            FASTDFS_success_sync_out_bytes    => 'hash_07_VER_e7ee90a6752c8c887ade3748e245b403',
+            FASTDFS_total_file_open_count     => 'hash_07_VER_521fedf814b4ba0b4a4219c0324f8915',
+            FASTDFS_success_file_open_count   => 'hash_07_VER_aa396072a738a0fa83ba14274edfebc5',
+            FASTDFS_total_file_read_count     => 'hash_07_VER_99de18bd96b8fa4dce86e2a5a4e03efe',
+            FASTDFS_success_file_read_count   => 'hash_07_VER_35fb355ae82feadadf86313274051fae',
+            FASTDFS_total_file_write_count    => 'hash_07_VER_61fc6a4486944f83395ede0c4f89ba5c',
+            FASTDFS_success_file_write_count  => 'hash_07_VER_0438d8922518feb84ba1af6b7e349de6',
+         },
+      },
+   },
+};
