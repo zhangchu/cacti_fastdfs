@@ -56,7 +56,7 @@ function fastdfs_get ( $options ) {
 	global $cache_dir;
 	
 	$tmpfile = $cache_dir.'/fastdfs_results.txt';
-	if (!is_file($tmpfile) || ((time() - filemtime($tmpfile)) > 50)) {
+	if (!is_file($tmpfile) || ((time() - filemtime($tmpfile)) > 300)) {
 		system('/usr/local/fastdfs/client/fdfs_monitor /etc/fdfs/client.conf > '.$tmpfile.' 2>&1');
 	}
 	return file_get_contents($tmpfile);
