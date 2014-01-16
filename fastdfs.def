@@ -95,11 +95,11 @@
             hash       => 'hash_01_VER_c72993ba55aa7d90792c2dd4e6efc7d8',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_upload_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_c6cf957687c845a60342a98cb172c40f'
             },
             FASTDFS_success_upload_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_3cc208f18138b68b2562ce57b5b802d1'
             },
          },
@@ -131,11 +131,11 @@
             hash       => 'hash_01_VER_b5176f3dc44785b4011ecfd2e39d04e0',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_upload_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_6bb5bbb15df1c7a1214869e0420cf501'
             },
             FASTDFS_success_upload_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_6630037e3ebf93db3d25ccfc8b0765c8'
             },
          },
@@ -167,11 +167,11 @@
             hash       => 'hash_01_VER_183acf174f3da3cc8c58399df8fe0b91',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_append_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_adbb51d2b571486d5b258a6d69aeae33'
             },
             FASTDFS_success_append_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_fa9c5e981da4478eb287f4a565ca40f0'
             },
          },
@@ -203,11 +203,11 @@
             hash       => 'hash_01_VER_222ff3bbd1e04963995ee004da52506d',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_append_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_488db6b2100d61b39d1f7c63a512c1f8'
             },
             FASTDFS_success_append_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_890893d261b83da3f90d307cece74a84'
             },
          },
@@ -239,11 +239,11 @@
             hash       => 'hash_01_VER_3081997fd802992338b089af3673e44e',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_modify_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_a09bea6cee94829ae27acdb07d818770'
             },
             FASTDFS_success_modify_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_7f8d17d83e7b17ecf61328b708af4789'
             },
          },
@@ -275,11 +275,11 @@
             hash       => 'hash_01_VER_ac73195166ab31d3130148b2af41db63',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_modify_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_93f1ce8e412c9abab0e17a91e2b1c347'
             },
             FASTDFS_success_modify_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_e2dd7cb770386c8d44aa2fd814c40b18'
             },
          },
@@ -311,11 +311,11 @@
             hash       => 'hash_01_VER_002db52a4792f7772ecc3b872db2ede3',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_truncate_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_1c0506b98fe2675920f6662d3e4e665d'
             },
             FASTDFS_success_truncate_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_739cb5239d673ffcdfe67316f5d4ae1b'
             },
          },
@@ -347,11 +347,11 @@
             hash       => 'hash_01_VER_6a489c94f5f636a1c63326529fb18e1d',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_set_meta_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_5ff3902aec3de4bfb86429191d4b13de'
             },
             FASTDFS_success_set_meta_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_66ad6d3f25ece5b87ffcbc4a437c4090'
             },
          },
@@ -383,11 +383,11 @@
             hash       => 'hash_01_VER_244e95ce388c81b322750a36e57fb35d',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_delete_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_8e44e0d6392af1c29b839c1bf3484fad'
             },
             FASTDFS_success_delete_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_1f2a006ef007f300f09f15dba6f3c095'
             },
          },
@@ -419,11 +419,11 @@
             hash       => 'hash_01_VER_a7e128380a26289cc6cb5f03af956fc5',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_download_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_37cbcbd7eae117af335cb2b68fd23030'
             },
             FASTDFS_success_download_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_5ca7f1f6823f7b52b1dc7ca59a3d692a'
             },
          },
@@ -455,11 +455,11 @@
             hash       => 'hash_01_VER_72de7d4c31c0911f8c0cd36d819d78f0',
             input      => 'Get FastDFS Stats',
             FASTDFS_stotal_download_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_d095cd1da48d1e27a3f329d5d453cd5a'
             },
             FASTDFS_success_download_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_fe2a3febab1c66a4caf4360268b3caf0'
             },
          },
@@ -491,11 +491,11 @@
             hash       => 'hash_01_VER_f044c55502b80efccd01e78f63c7c460',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_get_meta_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_5f50d72e48a6d9b4b5e3c27a069507a2'
             },
             FASTDFS_success_get_meta_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_2308fe323fdc38e8dceaf8cb7ffb47d5'
             },
          },
@@ -527,11 +527,11 @@
             hash       => 'hash_01_VER_ce3cb449ef3fdc03e2d1001856dc2eae',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_create_link_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_a58661a5ae57e40082a3be9003678fbb'
             },
             FASTDFS_success_create_link_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_55f89ce339fc75bf05c73b06f58924f4'
             },
          },
@@ -563,11 +563,11 @@
             hash       => 'hash_01_VER_1b234d435cf3f5cb55ddf71163c935bd',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_delete_link_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_a8dd6b3ee5096df1383b15aeb017462e'
             },
             FASTDFS_success_delete_link_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_fd478042402746799dad73eaee275003'
             },
          },
@@ -599,19 +599,19 @@
             hash       => 'hash_01_VER_632b6d5484bb5da4139bc101ddce311b',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_sync_in_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_7bcc7496f2fac1ee8f8670ed0625ebae'
             },
             FASTDFS_success_sync_in_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_c5a2f7cc6a88c1256b905d79a665cc6a'
             },
             FASTDFS_total_sync_out_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_1071bb58b6f65977e3306f7df9780af6'
             },
             FASTDFS_success_sync_out_bytes => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_3656d15b332c19a3727498353f61d99b'
             },
          },
@@ -663,11 +663,11 @@
             hash       => 'hash_01_VER_0adca14041a85214203c31e2b00e970d',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_file_open_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_03e881a842fbef63514ad4298e604138'
             },
             FASTDFS_success_file_open_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_b16279f239bb49facb8e0cb79c489271'
             },
          },
@@ -699,19 +699,19 @@
             hash       => 'hash_01_VER_d2b201d493fa8e5a83f4e15aa4b3afd6',
             input      => 'Get FastDFS Stats',
             FASTDFS_total_file_read_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_697a2c98e17066766cc791b242b599ea'
             },
             FASTDFS_success_file_read_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_02f31d440c279a225ce3f099a1850e2c'
             },
             FASTDFS_total_file_write_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_55424993a065987cf451a8d1903c19e4'
             },
             FASTDFS_success_file_write_count => {
-               data_source_type_id => '1',
+               data_source_type_id => '3',
                hash => 'hash_08_VER_6f4bab5bbad53c21e2aae4203e822d58'
             },
          },
